@@ -6,6 +6,7 @@ class Post(models.Model):
         'auth.User',
         on_delete=models.CASCADE,
     )
+    cover = models.ImageField(upload_to='images/')
     body = models.TextField()
  
     def __str__(self):
