@@ -8,6 +8,9 @@ class Post(models.Model):
     )
     cover = models.ImageField(upload_to='images/')
     body = models.TextField()
+
+    class Meta:
+        ordering = ['-id', ]
  
     def __str__(self):
         return self.title
