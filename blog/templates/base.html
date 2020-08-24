@@ -2,15 +2,25 @@
 <html>
   <head>
     <title>Django blog</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+
   </head>
   <body>
     <header>
-      <h1><a href="{% url 'home' %}">Django blog</a></h1>
+        <link rel="stylesheet" href="{% static 'css/css/bootstrap.min.css' %}" type="text/css">
+
+      <h1><a >Django blog</a></h1>
+      <p>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+        <a href="/post/new" class="btn btn-primary btn-lg">Добавить пост &raquo;</a>
+     </p>
+
       <img src="{{ post.cover.url}}" alt="{{ post.title }}">
     </header>
+
+
     <div>
+
       {% block content %}
       {% endblock content %}
     </div>
